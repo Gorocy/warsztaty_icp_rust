@@ -10,7 +10,7 @@ fn greet(name: String) -> String {
 }
 
 #[ic_cdk::update]
-fn dodaj_wpis(wpis: String) {
+fn upload(wpis: String) {
     WPISY.with(|wpisy| {
         let mut mutable_wpisy = wpisy.borrow_mut();
         mutable_wpisy.push(wpis);
@@ -18,7 +18,7 @@ fn dodaj_wpis(wpis: String) {
 }
 
 #[ic_cdk::query]
-fn pobierz_wpisy() -> Vec<String> {
+fn get() -> Vec<String> {
     WPISY.with(|wpisy| wpisy.borrow().clone())
 }
 

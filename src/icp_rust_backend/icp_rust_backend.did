@@ -1,5 +1,5 @@
 service : {
-  dodaj_wpis : (text) -> ();
+  get : () -> (vec text) query;
   greet : (text) -> (text) query;
-  pobierz_wpisy : () -> (vec text) query;
+  upload : (text) -> ();
 }
