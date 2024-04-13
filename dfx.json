@@ -6,15 +6,13 @@
         "node_compatibility": true
       },
       "package": "icp_rust_backend",
-      "type": "rust"
+      "type": "custom",
+      "build": "./build.sh icp_rust_backend",
+      "wasm": "target/wasm32-unknown-unknown/release/icp_rust_backend.wasm"
     },
     "icp_rust_frontend": {
-      "dependencies": [
-        "icp_rust_backend"
-      ],
-      "source": [
-        "src/icp_rust_frontend/dist"
-      ],
+      "dependencies": ["icp_rust_backend"],
+      "source": ["src/icp_rust_frontend/dist"],
       "type": "assets",
       "workspace": "icp_rust_frontend"
     },
